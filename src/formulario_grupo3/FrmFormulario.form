@@ -323,7 +323,6 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxDesSoft.addActionListener(this);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxDesSoft);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jChkBxCienDat">
@@ -332,7 +331,6 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxCienDat.addActionListener(this);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxCienDat);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jChkBxSisInfor">
@@ -344,7 +342,6 @@
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxSisInfor.addActionListener(this);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxSisInfor);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jChkBxOtros">
@@ -353,7 +350,6 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxOtros.addActionListener(this);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxOtros);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTxfOtros">

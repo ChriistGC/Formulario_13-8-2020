@@ -32,13 +32,13 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
         setTitle("Uso de componentes");
     }
 
-    String sexo, LinInv;
+    String sexo, desSof="", cieDat="",sisInf="",otr="";
     int pos, pos2;
 
     public void Datos() {
         jTxAreaDatos.setText("\t\tDatos\nNombre: " + jTxfNomApe.getText() + "\nEdad: " + jSprEdad.getModel().getValue()
                 + "\nPeso: " + jSprPeso.getModel().getValue() + "\nSemestre Aprobado: " + jLstSem.getModel().getElementAt(pos)
-                + "\nSexo: " + sexo + "\nSector de Residencia: " + jCmBxSector.getItemAt(pos2) + "\nLinea de Investigacion: " + LinInv);
+                + "\nSexo: " + sexo + "\nSector de Residencia: " + jCmBxSector.getItemAt(pos2) + "\nLinea de Investigacion: " + desSof+cieDat+sisInf+otr);
     }
 
     /**
@@ -156,15 +156,12 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
 
         jLblInvst.setText("Lineas de Investigación que le gustaría realizar su tesis");
 
-        buttonGroup2.add(jChkBxDesSoft);
         jChkBxDesSoft.setText("Desarrollo de Software");
         jChkBxDesSoft.addActionListener(this);
 
-        buttonGroup2.add(jChkBxCienDat);
         jChkBxCienDat.setText("Ciencia de Datos");
         jChkBxCienDat.addActionListener(this);
 
-        buttonGroup2.add(jChkBxSisInfor);
         jChkBxSisInfor.setText("Sistemas de Información");
         jChkBxSisInfor.addActionListener(this);
         jChkBxSisInfor.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +170,6 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
             }
         });
 
-        buttonGroup2.add(jChkBxOtros);
         jChkBxOtros.setText("Otros");
         jChkBxOtros.addActionListener(this);
 
@@ -435,32 +431,39 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
         Object obj = e.getSource();
         if (jRdBtnFem.isSelected() == true) {
             sexo = jRdBtnFem.getText();
-            jTxfOtros.setText("");
             Datos();
         } else if (jRdBtnMasc.isSelected() == true) {
             sexo = jRdBtnMasc.getText();
             Datos();
         }
         if (jChkBxCienDat.isSelected() == true) {
-            LinInv = jChkBxCienDat.getText();
-            jTxfOtros.setEnabled(false);
-            jTxfOtros.setText("");
+            cieDat = " "+jChkBxCienDat.getText();
             Datos();
-        } else if (jChkBxSisInfor.isSelected() == true) {
-            LinInv = jChkBxSisInfor.getText();
-            jTxfOtros.setEnabled(false);
-            jTxfOtros.setText("");
+        } else{
+            cieDat="";
             Datos();
-        } else if (jChkBxDesSoft.isSelected() == true) {
-            LinInv = jChkBxDesSoft.getText();
+        } 
+        if (jChkBxSisInfor.isSelected() == true) {
+            sisInf = " "+jChkBxSisInfor.getText();
             jTxfOtros.setEnabled(false);
             Datos();
-        } else if (jChkBxOtros.isSelected() == true) {
+        } else{
+            sisInf="";
+            Datos();
+        } 
+        if (jChkBxDesSoft.isSelected() == true) {
+            desSof = " "+jChkBxDesSoft.getText();
+            Datos();
+        } else{
+            desSof="";
+            Datos();
+        }
+        if (jChkBxOtros.isSelected() == true) {
             jTxfOtros.setEnabled(true);
             jTxfOtros.addKeyListener(new KeyListener() {
                 @Override
                 public void keyTyped(KeyEvent e) {
-                    LinInv=jTxfOtros.getText();
+                    otr=" "+jTxfOtros.getText();
                     Datos();
                 }
                 @Override
@@ -468,6 +471,11 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
                 @Override
                 public void keyReleased(KeyEvent e) {}
             });
+        }else{
+            jTxfOtros.setEnabled(false);
+            jTxfOtros.setText("");
+            otr="";
+            Datos();
         }
     }
 
