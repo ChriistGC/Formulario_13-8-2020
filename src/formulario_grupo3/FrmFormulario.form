@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jChkBxDesSoft" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jChkBxCienDat" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jChkBxSisInfor" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jChkBxOtros" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jTxfOtros" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLblNomApe" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jTxfNomApe" min="-2" pref="429" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLblSexo" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                                  <Component id="jRdBtnFem" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jRdBtnMasc" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLblSector" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jCmBxSector" min="-2" pref="109" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLblPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLblEdad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jSprEdad" max="32767" attributes="0"/>
+                                                  <Component id="jSprPeso" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel2" min="-2" pref="232" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane1" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="jLblSem" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLblInvst" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="545" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel4" min="-2" pref="397" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jTgBtnGrabar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jProgressBar1" min="-2" pref="546" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblNomApe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxfNomApe" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSprEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLblSem" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLblPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSprPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRdBtnFem" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRdBtnMasc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLblSector" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jCmBxSector" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+              <Component id="jLblInvst" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jChkBxDesSoft" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jChkBxCienDat" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jChkBxSisInfor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jChkBxOtros" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxfOtros" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="148" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jProgressBar1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTgBtnGrabar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLblNomApe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombres y Apellidos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxfNomApe">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jTxfNomApe.addKeyListener(new KeyListener(){    &#xa;    @Override&#xa;    public void keyTyped(KeyEvent e) {&#xa;        Datos();&#xa;        &#xa;    }&#xa;&#xa;    @Override&#xa;    public void keyPressed(KeyEvent e) {}&#xa;&#xa;    @Override&#xa;    public void keyReleased(KeyEvent e) {}&#xa;});"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblEdad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblPeso">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Peso Kg"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSprEdad">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="18" maximum="60" minimum="18" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jSprEdad.addChangeListener(this);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSprPeso">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="50.5" maximum="200.0" minimum="50.5" numberType="java.lang.Double" stepSize="0.25" type="number"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jSprPeso.addChangeListener(this);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Valor Minimo 18 M&#xe1;ximo 60 Incremento 1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Peso M&#xed;nimo 50.50 M&#xe1;ximo 200.00 Incremento 0.25"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblSem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semestre aprobado"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="jLstSem">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="Semestre 1"/>
+                <StringItem index="1" value="Semestre 2 "/>
+                <StringItem index="2" value="Semestre 3"/>
+                <StringItem index="3" value="Semestre 4"/>
+                <StringItem index="4" value="Semestre 5"/>
+              </StringArray>
+            </Property>
+            <Property name="selectionMode" type="int" value="1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLstSem.addListSelectionListener(new ListSelectionListener(){&#xa;    @Override&#xa;    public void valueChanged(ListSelectionEvent e){&#xa;        if (!e.getValueIsAdjusting()) {&#xa;            pos = jLstSem.getSelectedIndex();&#xa;            Datos();&#xa;        }&#xa;    }&#xa;&#xa;});"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLblSexo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sexo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRdBtnFem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Femenino"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="buttonGroup1.add(jRdBtnFem);&#xa;jRdBtnFem.addActionListener(this);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRdBtnMasc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Masculino"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="buttonGroup1.add(jRdBtnMasc);&#xa;jRdBtnMasc.addActionListener(this);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblSector">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sector de residencia"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCmBxSector">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Norte"/>
+            <StringItem index="1" value="Sur"/>
+            <StringItem index="2" value="Este"/>
+            <StringItem index="3" value="Oeste"/>
+            <StringItem index="4" value="Centro"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jCmBxSector.addItemListener(new ItemListener(){&#xa;    @Override&#xa;    public void itemStateChanged(ItemEvent e){&#xa;        pos2 = jCmBxSector.getSelectedIndex();&#xa;        Datos();&#xa;    }&#xa;});"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblInvst">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lineas de Investigaci&#xf3;n que le gustar&#xed;a realizar su tesis"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jChkBxDesSoft">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Desarrollo de Software"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxDesSoft.addActionListener(this);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxDesSoft);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jChkBxCienDat">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ciencia de Datos"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxCienDat.addActionListener(this);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxCienDat);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jChkBxSisInfor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sistemas de Informaci&#xf3;n"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jChkBxSisInforActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxSisInfor.addActionListener(this);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxSisInfor);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jChkBxOtros">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Otros"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jChkBxOtros.addActionListener(this);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonGroup2.add(jChkBxOtros);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxfOtros">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jTxfOtros.setEnabled(false);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="El textArea se actualiza cada vez que el usuario realiza un cambio en cada uno de los componentes:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTxAreaDatos">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Al dar click en grabar(Toggle Button) se inicia el progressbar y al finalizar se limpia el TextArea"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jTgBtnGrabar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Grabar"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTgBtnGrabar.addItemListener(new ItemListener(){&#xa;    @Override&#xa;    public void itemStateChanged(ItemEvent e){&#xa;        int estado = e.getStateChange();&#xa;        &#xa;        if(estado == ItemEvent.SELECTED){&#xa;jTgBtnGrabar.setEnabled(false);&#xa;            int max = jProgressBar1.getMaximum();&#xa;             Thread runner = new Thread() {&#xa;                public void run() {&#xa;                    int cont = jProgressBar1.getMinimum();&#xa;                    while (cont &lt;= max) {&#xa;                        jProgressBar1.setValue(cont);&#xa;                        cont++;&#xa;                        try {&#xa;                                Thread.sleep(100);&#xa;                                if(cont&gt;100){&#xa;jProgressBar1.setValue(0);&#xa;                                jTxAreaDatos.setText(&quot;&quot;);&#xa;                                jTgBtnGrabar.setEnabled(true);&#xa;                                jTgBtnGrabar.setSelected(false);&#xa;                                }&#xa;                        }catch (InterruptedException ex) {}&#xa;                    }}&#xa;             };&#xa;                runner.start();&#xa;        } &#xa;    }&#xa;});"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTgBtnGrabar.addActionListener(this);"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>
