@@ -5,6 +5,7 @@
  */
 package formulario_grupo3;
 
+import com.sun.istack.internal.logging.Logger;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.event.ChangeEvent;
@@ -13,8 +14,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.text.ParseException;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -32,13 +38,13 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
         setTitle("Uso de componentes");
     }
 
-    String sexo, desSof="", cieDat="",sisInf="",otr="";
+    String sexo, desSof = "", cieDat = "", sisInf = "", otr = "";
     int pos, pos2;
 
     public void Datos() {
-        jTxAreaDatos.setText("\t\tDatos\nNombre: " + jTxfNomApe.getText() + "\nEdad: " + jSprEdad.getModel().getValue()
-                + "\nPeso: " + jSprPeso.getModel().getValue() + "\nSemestre Aprobado: " + jLstSem.getModel().getElementAt(pos)
-                + "\nSexo: " + sexo + "\nSector de Residencia: " + jCmBxSector.getItemAt(pos2) + "\nLinea de Investigacion: " + desSof+cieDat+sisInf+otr);
+        jTxAreaDatos.setText("\t\tDatos\nNombre: " + jTxfNomApe.getText() + "\nEdad: " + jSprEdad.getValue()
+                + "\nPeso: " + jSprPeso.getValue() + "\nSemestre Aprobado: " + jLstSem.getModel().getElementAt(pos)
+                + "\nSexo: " + sexo + "\nSector de Residencia: " + jCmBxSector.getItemAt(pos2) + "\nLinea de Investigacion: " + desSof + cieDat + sisInf + otr);
     }
 
     /**
@@ -80,6 +86,11 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel4 = new javax.swing.JLabel();
         jTgBtnGrabar = new javax.swing.JToggleButton();
+        jBtnIngresar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTblEstudiante = new javax.swing.JTable();
+        jBtnEliminar = new javax.swing.JButton();
+        jTxfBuscar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -186,6 +197,51 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
         jTgBtnGrabar.setText("Grabar");
         jTgBtnGrabar.addActionListener(this);
 
+        jBtnIngresar.setText("Ingresar");
+        jBtnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnIngresarActionPerformed(evt);
+            }
+        });
+
+        jTblEstudiante.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombres y Apellidos", "Edad", "Sexo", "Semestre", "Sector", "Lineas", "Peso"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Byte.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTblEstudiante);
+
+        jBtnEliminar.setText("Eliminar");
+        jBtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnEliminarActionPerformed(evt);
+            }
+        });
+
+        jTxfBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTxfBuscarKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,6 +252,40 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLblNomApe)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTxfNomApe, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLblSexo)
+                                            .addGap(42, 42, 42)
+                                            .addComponent(jRdBtnFem)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jRdBtnMasc))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLblSector)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jCmBxSector, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLblPeso)
+                                            .addComponent(jLblEdad))
+                                        .addGap(51, 51, 51)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jSprEdad)
+                                            .addComponent(jSprPeso))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLblSem)))
+                            .addComponent(jLblInvst)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jChkBxDesSoft)
                                 .addGap(18, 18, 18)
                                 .addComponent(jChkBxCienDat)
@@ -204,60 +294,31 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
                                 .addGap(18, 18, 18)
                                 .addComponent(jChkBxOtros)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTxfOtros))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLblNomApe)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTxfNomApe, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jLblSexo)
-                                                    .addGap(42, 42, 42)
-                                                    .addComponent(jRdBtnFem)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jRdBtnMasc))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jLblSector)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jCmBxSector, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLblPeso)
-                                                    .addComponent(jLblEdad))
-                                                .addGap(51, 51, 51)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jSprEdad)
-                                                    .addComponent(jSprPeso))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel1)
-                                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLblSem)))
-                                    .addComponent(jLblInvst))
-                                .addGap(0, 35, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(23, 23, 23)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTxfOtros, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(28, 28, 28)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTgBtnGrabar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jBtnIngresar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jBtnEliminar))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTgBtnGrabar))
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(264, 264, 264)
+                        .addComponent(jTxfBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,14 +362,20 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTxfBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTgBtnGrabar))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(jTgBtnGrabar)
+                    .addComponent(jBtnIngresar)
+                    .addComponent(jBtnEliminar))
+                .addContainerGap())
         );
 
         jTgBtnGrabar.addItemListener(new ItemListener(){
@@ -348,6 +415,69 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
         // TODO add your handling code here:
     }//GEN-LAST:event_jChkBxSisInforActionPerformed
 
+    private void jBtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresarActionPerformed
+        try {
+            this.jSprEdad.commitEdit();
+            this.jSprPeso.commitEdit();
+        } catch (ParseException ex) {
+            //Logger.getLogger(FrmFormulario.class.getName()).log(Level.SEVERE,null, ex);
+        }
+        DefaultTableModel modelo = (DefaultTableModel) jTblEstudiante.getModel();
+        Object[] datos = new Object[7];
+        datos[0] = this.jTxfNomApe.getText();
+        datos[1] = this.jSprEdad.getValue();
+        if (jRdBtnFem.isSelected()) {
+            datos[2] = jRdBtnFem.getText();
+        }
+        if (jRdBtnMasc.isSelected()) {
+            datos[2] = jRdBtnMasc.getText();
+        }
+        if (jLstSem.getSelectedIndex() >= 0) {
+            datos[3] = jLstSem.getSelectedValue();
+        }
+        if (jCmBxSector.getSelectedIndex() >= 0) {
+            datos[4] = jCmBxSector.getSelectedItem();
+        }
+        if (jChkBxCienDat.isSelected()) {
+            datos[5] = jChkBxCienDat.getText();
+        }
+        if (jChkBxDesSoft.isSelected()) {
+            datos[5] = datos[5] + "" + jChkBxDesSoft.getText();
+        }
+        if (jChkBxSisInfor.isSelected()) {
+            datos[5] = datos[5] + "" + jChkBxSisInfor.getText();
+        }
+        if (jChkBxOtros.isSelected()) {
+            datos[5] = datos[5] + "" + jChkBxOtros.getText();
+            datos[5] = datos[5] + "" + jTxfOtros.getText();
+        }
+        datos[6] = jSprPeso.getValue();
+        modelo.addRow(datos);
+        jTblEstudiante.setModel(modelo);
+    }//GEN-LAST:event_jBtnIngresarActionPerformed
+
+    private void jBtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEliminarActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelo = (DefaultTableModel) jTblEstudiante.getModel();
+        int pos = jTblEstudiante.getSelectedRow();
+        if (pos >= 0) {
+            int btn = JOptionPane.showConfirmDialog(this, "¿Seguro desea eliminar la fila " + pos + "?", "Mensaje", JOptionPane.OK_CANCEL_OPTION);
+            if (btn == JOptionPane.OK_OPTION) {
+                modelo.removeRow(pos);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay filas para eliminar", "Sistema", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jBtnEliminarActionPerformed
+    private TableRowSorter trsFiltro;
+    private void jTxfBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxfBuscarKeyPressed
+        // TODO add your handling code here:
+        trsFiltro = new TableRowSorter(jTblEstudiante.getModel());
+        jTblEstudiante.setRowSorter(trsFiltro);
+        trsFiltro.setRowFilter(RowFilter.regexFilter(this.jTxfBuscar.getText(),0));
+    }//GEN-LAST:event_jTxfBuscarKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -386,6 +516,8 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton jBtnEliminar;
+    private javax.swing.JButton jBtnIngresar;
     private javax.swing.JCheckBox jChkBxCienDat;
     private javax.swing.JCheckBox jChkBxDesSoft;
     private javax.swing.JCheckBox jChkBxOtros;
@@ -408,10 +540,13 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
     private javax.swing.JRadioButton jRdBtnMasc;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSpinner jSprEdad;
     private javax.swing.JSpinner jSprPeso;
+    private javax.swing.JTable jTblEstudiante;
     private javax.swing.JToggleButton jTgBtnGrabar;
     private javax.swing.JTextArea jTxAreaDatos;
+    private javax.swing.JTextField jTxfBuscar;
     private javax.swing.JTextField jTxfNomApe;
     private javax.swing.JTextField jTxfOtros;
     // End of variables declaration//GEN-END:variables
@@ -437,25 +572,25 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
             Datos();
         }
         if (jChkBxCienDat.isSelected() == true) {
-            cieDat = " "+jChkBxCienDat.getText();
+            cieDat = " " + jChkBxCienDat.getText();
             Datos();
-        } else{
-            cieDat="";
+        } else {
+            cieDat = "";
             Datos();
-        } 
+        }
         if (jChkBxSisInfor.isSelected() == true) {
-            sisInf = " "+jChkBxSisInfor.getText();
+            sisInf = " " + jChkBxSisInfor.getText();
             jTxfOtros.setEnabled(false);
             Datos();
-        } else{
-            sisInf="";
+        } else {
+            sisInf = "";
             Datos();
-        } 
+        }
         if (jChkBxDesSoft.isSelected() == true) {
-            desSof = " "+jChkBxDesSoft.getText();
+            desSof = " " + jChkBxDesSoft.getText();
             Datos();
-        } else{
-            desSof="";
+        } else {
+            desSof = "";
             Datos();
         }
         if (jChkBxOtros.isSelected() == true) {
@@ -463,18 +598,22 @@ public class FrmFormulario extends javax.swing.JFrame implements ChangeListener,
             jTxfOtros.addKeyListener(new KeyListener() {
                 @Override
                 public void keyTyped(KeyEvent e) {
-                    otr=" "+jTxfOtros.getText();
+                    otr = " " + jTxfOtros.getText();
                     Datos();
                 }
+
                 @Override
-                public void keyPressed(KeyEvent e) {}
+                public void keyPressed(KeyEvent e) {
+                }
+
                 @Override
-                public void keyReleased(KeyEvent e) {}
+                public void keyReleased(KeyEvent e) {
+                }
             });
-        }else{
+        } else {
             jTxfOtros.setEnabled(false);
             jTxfOtros.setText("");
-            otr="";
+            otr = "";
             Datos();
         }
     }
